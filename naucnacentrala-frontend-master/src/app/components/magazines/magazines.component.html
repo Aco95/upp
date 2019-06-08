@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="panel panel-danger" *ngFor="let m of magazines">
+    <div class="panel-heading">
+      <h3 class="panel-title"> {{(m.name)}} </h3>
+    </div>
+    <div class="panel-body">
+
+      <div *ngIf="m.id  === 1"> <img style="max-width: 20%;" src="assets/images/greek.jpg" align="left"></div>
+      <div *ngIf="m.id  === 2"> <img style="max-width: 20%;" src="assets/images/macWorld.jpg" align="left"></div>
+      <div *ngIf="m.id  === 3"> <img style="max-width: 20%;" src="assets/images/astronomy.jpg" align="left"></div>
+      <p *ngIf="m.paymentType  === 'OPENACCESS'"> <strong> &nbsp; This magazine is open access. </strong> Publishing is
+        free.
+      </p>
+      <p *ngIf="m.paymentType  === 'SUBSCRIPTION'"> <strong> &nbsp; You have to subscribe on this magazine.
+        </strong>Publishing
+        is not free.</p>
+      <p> <strong> &nbsp; Price : </strong> {{m.price | currency}} </p>
+      <p> <strong>&nbsp; Reviewers: </strong> </p>
+      <p *ngFor="let r of m.reviewers">&nbsp; {{r.firstName}} {{r.lastName}} </p>
+      <p> <strong> &nbsp; Editors of specific areas: </strong> </p>
+      <p *ngFor="let e of m.editorsOfSpecificAreas"> &nbsp; {{e.firstName}} {{e.lastName}} </p>
+      <p> <strong> &nbsp; Scientific Areas: </strong> </p>
+      <p *ngFor="let s of m.scientificAreas"> &nbsp; {{s.scientificAreaName}} </p>
+
+
+
+      <br />
+
+      <button class="btn btn-success btn-block" stlye="width: 150px;" (click)="publishPaper(m.id)"> Publish scientific
+        paper </button>
+
+    </div>
+
+  </div>
+</div>

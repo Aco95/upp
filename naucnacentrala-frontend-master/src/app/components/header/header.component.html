@@ -1,0 +1,24 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a routerLink="/magazines" class="navbar-brand">Magazines</a>
+    </div>
+    <div class="navbar-header">
+      <a routerLink="/tasks" class="navbar-brand">My tasks</a>
+    </div>
+    <div class="navbar-header" style="margin-left: 450px">
+      <li><a class="navbar-brand" href="javascript:void(0)">Current user:
+          {{this.currentUserHolderService.getCurrentUser()}}</a></li>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <ng-template [ngIf]="!authService.isAuthenticated()">
+          <li><a routerLink="/signin">Login</a></li>
+
+        </ng-template>
+        <li><a style="cursor: pointer;" (click)="onLogout()" *ngIf="authService.isAuthenticated()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
