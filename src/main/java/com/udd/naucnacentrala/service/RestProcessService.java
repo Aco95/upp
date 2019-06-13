@@ -118,10 +118,26 @@ public class RestProcessService {
 							isVariable=true;
 							break;
 						}
-					}else {
+					} else if(taskName.equals("Submit paper again")) {
+						if(!key.equals("content")) {
+							isVariable=true;
+							break;
+						} 
+					} else if (taskName.equals("Check scientific paper")) {
+						if(!key.equals("content") && 
+								!key.equals("paperApproved") &&
+								!key.equals("notRelevant") &&
+								!key.equals("badFormating") &&
+								!key.equals("title")) {
+							isVariable=true;
+							break;
+						}
+						
+					}  else {
 						isVariable=true;
 						break;
 					}
+					
 				}
 					
 			}
@@ -130,6 +146,7 @@ public class RestProcessService {
 				ff.setId(key);
 				ff.setType(map.get(key).getType());
 				ff.setLabel(capitalize(key));
+				ff.setValue(map.get(key).getValue());
 				formFields.add(ff);
 			}
 		}
@@ -152,7 +169,6 @@ public class RestProcessService {
 		ResponseEntity<Void> response = restTemplate.postForEntity("http://localhost:8080/rest/task/" + taskId + "/complete", completeDto, Void.class);
 	}
 	
-	//not
 	private String capitalize(final String line) {
 		   return Character.toUpperCase(line.charAt(0)) + line.substring(1);
 		}

@@ -57,6 +57,7 @@
           <camunda:formField id="scientificArea" label="Scientific area " type="string" />
           <camunda:formField id="keywords" label="Keywords" type="string" />
           <camunda:formField id="coauthors" label="Coauthors" type="string" />
+          <camunda:formField id="content" label="Content" type="string" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_086c7kv</bpmn:incoming>
@@ -69,6 +70,8 @@
           <camunda:formField id="paperApproved" label="Paper approved" type="boolean" />
           <camunda:formField id="notRelevant" label="Not relevant" type="boolean" />
           <camunda:formField id="badFormating" label="Bad formating" type="boolean" />
+          <camunda:formField id="content" label="Content" type="string" />
+          <camunda:formField id="title" label="Title" type="string" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0d4lqlf</bpmn:incoming>
@@ -98,7 +101,7 @@
     <bpmn:userTask id="Task_1knxngc" name="Submit paper again" camunda:assignee="${authorId}">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="pdfContent" label="Pdf content" type="string" />
+          <camunda:formField id="content" label="Content" type="string" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_1sjnvwc</bpmn:incoming>
@@ -116,7 +119,7 @@
     <bpmn:userTask id="Task_0muf684" name="Choose reviewers" camunda:assignee="${scientificAreaEditorId}">
       <bpmn:extensionElements>
         <camunda:formData>
-          <camunda:formField id="reviewerId" label="Reviewers" type="string" />
+          <camunda:formField id="reviewerId" label="Reviewer Id" type="long" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>SequenceFlow_0159jw8</bpmn:incoming>

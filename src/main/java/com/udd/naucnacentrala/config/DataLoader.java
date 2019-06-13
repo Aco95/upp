@@ -352,6 +352,7 @@ public class DataLoader implements ApplicationRunner {
 		List<ScientificArea> scientificAreas2 = new ArrayList<ScientificArea>();
 		
 		reviewers2.add(userRepository.getOne((long)4));
+		reviewers2.add(userRepository.getOne((long)5));
 		editorsOfSpecialAreas2.add(userRepository.getOne((long)3));
 		scientificAreas2.add(scientificAreaRepository.getOne((long)2));
 		

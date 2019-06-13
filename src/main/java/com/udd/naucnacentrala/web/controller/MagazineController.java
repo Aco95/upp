@@ -93,6 +93,7 @@ public class MagazineController {
 		VariableValueDto variableValueMagazinTitle= new VariableValueDto();
 		variableValueMagazinTitle.setValue(magazine.getName());
 		variables.put("magazineTitle", variableValueMagazinTitle);
+
 		
 		runtimeService.startProcess("publishScientificPaper", variables);
 

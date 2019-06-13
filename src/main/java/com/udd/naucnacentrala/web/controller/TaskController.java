@@ -35,7 +35,6 @@ import com.udd.naucnacentrala.web.dto.TaskDto;
 @RequestMapping(value = "/api/task")
 public class TaskController {
 	
-	private RestProcessService restProcessService =  new RestProcessService();
 	
 	@Autowired
 	private UserService userService;

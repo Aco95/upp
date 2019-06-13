@@ -5,6 +5,7 @@ public class DTOFormField {
 	String id;
 	String label;
 	FormFieldTypeDto type;
+	Object value;
 	
 	public DTOFormField() {}
 
@@ -13,6 +14,15 @@ public class DTOFormField {
 		this.id = id;
 		this.label = label;
 		this.type = new FormFieldTypeDto(type.toLowerCase());
+	}
+
+	
+	public Object getValue() {
+		return value;
+	}
+
+	public void setValue(Object value) {
+		this.value = value;
 	}
 
 	public String getId() {
